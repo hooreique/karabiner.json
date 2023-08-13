@@ -278,7 +278,28 @@
               {
                 "conditions": [
                   {
-                    "name": "capslock_navigator_mode",
+                    "name": "is_caps_lock_down",
+                    "type": "variable_if",
+                    "value": 1
+                  }
+                ],
+                "from": {
+                  "key_code": "delete_or_backspace",
+                  "modifiers": {
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "delete_forward"
+                  }
+                ],
+                "type": "basic"
+              },
+              {
+                "conditions": [
+                  {
+                    "name": "is_caps_lock_down",
                     "type": "variable_if",
                     "value": 1
                   }
