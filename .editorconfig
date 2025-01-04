@@ -1,0 +1,6 @@
+root = true
+
+[karabiner.json]
+indent_style = space
+indent_size = tab
+tab_width = 4
