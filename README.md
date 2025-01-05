@@ -1,39 +1,47 @@
-### 주요 설정
+### 주요 설정: 키 리매핑 및 조건
+| **설명**                     | **입력 키**               | **출력 키/명령**                                       | **조건**                                                                                       |
+|-------------------------------|---------------------------|-------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| `right_control` 리매핑        | `right_control`           | `right_control`                                       | 단독 입력 시 `delete_forward`                                                                 |
+| `left_shift` 리매핑           | `left_shift`              | `left_shift`                                          | 단독 입력 시 `im-select`로 Colemak 키보드 레이아웃 전환 (RDC 앱 제외)                          |
+| `right_shift` 리매핑          | `right_shift`             | `right_shift`                                         | 단독 입력 시 `im-select`로 한글 3벌식 전환 (RDC 앱 제외)                                       |
+| `right_command` 리매핑        | `right_command`           | `right_command`                                       | 단독 입력 시 사용자 정의 `im-select-toggle` 실행 (RDC 앱 제외)                                 |
+| `caps_lock` 리매핑            | `caps_lock`               | `escape` (단독 입력 시) / CapsLock 키 눌림 상태 변수 설정 |                                                                                               |
+| `left_command` ↔ `left_option`| `left_command`            | `left_option`                                         | RDC 앱 활성화 시                                                                               |
+| `right_command` ↔ `right_option`| `right_command`           | `right_option`                                        | RDC 앱 활성화 시                                                                               |
 
-| **설명**                   | **조건**                                                                                                                                         | **입력**                        | **출력**                                           |
-|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|--------------------------------------------------|
-| **Right Control**           | 없음                                                                                                                                             | `right_control`                 | - 혼자 눌렀을 때: `delete_forward`               |
-| **Left Shift**              | `com.microsoft.rdc.macos`가 활성화되지 않은 경우                                                                                                | `left_shift`                    | - 혼자 눌렀을 때: `im-select`로 Colemak 레이아웃 전환 |
-| **Right Shift**             | `com.microsoft.rdc.macos`가 활성화되지 않은 경우                                                                                                | `right_shift`                   | - 혼자 눌렀을 때: `im-select`로 한글 레이아웃 전환   |
-| **Right Command**           | `com.microsoft.rdc.macos`가 활성화되지 않은 경우                                                                                                | `right_command`                 | - 혼자 눌렀을 때: `/Users/song/.config/karabiner/im-select-toggle` |
-| **Caps Lock**               | 없음                                                                                                                                             | `caps_lock`                     | - 혼자 눌렀을 때: `escape`<br> - 키 누름 상태 저장: `is_caps_lock_down` 변수 설정 |
-| **Left Command**            | `com.microsoft.rdc.macos`가 활성화된 경우                                                                                                        | `left_command`                  | `left_option`                                   |
-| **Left Option**             | `com.microsoft.rdc.macos`가 활성화된 경우                                                                                                        | `left_option`                   | `left_command`                                  |
-| **Right Command**           | `com.microsoft.rdc.macos`가 활성화된 경우                                                                                                        | `right_command`                 | `right_option`                                  |
-| **Right Option**            | `com.microsoft.rdc.macos`가 활성화된 경우                                                                                                        | `right_option`                  | `right_command`                                 |
+### CapsLock + 조합 키 리매핑
+| **조합 키**        | **출력 키/명령**      |
+|---------------------|-----------------------|
+| `CapsLock + J`      | `←` (Left Arrow)     |
+| `CapsLock + K`      | `↓` (Down Arrow)     |
+| `CapsLock + I`      | `↑` (Up Arrow)       |
+| `CapsLock + L`      | `→` (Right Arrow)    |
+| `CapsLock + H`      | `Home`               |
+| `CapsLock + ;`      | `End`                |
+| `CapsLock + E`      | 화면 위로 스크롤 (마우스 휠 -64) |
+| `CapsLock + D`      | 화면 아래로 스크롤 (마우스 휠 64) |
+| `CapsLock + S`      | 오른쪽으로 스크롤 (마우스 휠 64) |
+| `CapsLock + F`      | 왼쪽으로 스크롤 (마우스 휠 -64) |
 
-### Caps Lock 조합 설정
+### CapsLock + 숫자 키 -> Function Key
+| **CapsLock + 숫자 키** | **출력 키** |
+|-------------------------|-------------|
+| `CapsLock + 1`         | `F1`        |
+| `CapsLock + 2`         | `F2`        |
+| `CapsLock + 3`         | `F3`        |
+| `CapsLock + 4`         | `F4`        |
+| `CapsLock + 5`         | `F5`        |
+| `CapsLock + 6`         | `F6`        |
+| `CapsLock + 7`         | `F7`        |
+| `CapsLock + 8`         | `F8`        |
+| `CapsLock + 9`         | `F9`        |
+| `CapsLock + 0`         | `F10`       |
+| `CapsLock + -`         | `F11`       |
+| `CapsLock + =`         | `F12`       |
 
-| **설명**                 | **조건**                             | **입력**               | **출력**             |
-|--------------------------|--------------------------------------|-----------------------|--------------------|
-| **커서 이동**             | `is_caps_lock_down = 1`              | `j`                   | `left_arrow`       |
-|                          |                                      | `k`                   | `down_arrow`       |
-|                          |                                      | `i`                   | `up_arrow`         |
-|                          |                                      | `l`                   | `right_arrow`      |
-| **Delete/Backspace**      | `is_caps_lock_down = 1`              | `delete_or_backspace` | `delete_forward`   |
-| **Home/End**              | `is_caps_lock_down = 1`              | `h`                   | `home`             |
-|                          |                                      | `semicolon`           | `end`              |
-| **스크롤**                | `is_caps_lock_down = 1`              | `e`                   | 위로 스크롤 (-64)   |
-|                          |                                      | `d`                   | 아래로 스크롤 (64)  |
-|                          |                                      | `s`                   | 오른쪽 스크롤 (64) |
-|                          |                                      | `f`                   | 왼쪽 스크롤 (-64)  |
-| **특정 애플리케이션 동작** | `is_caps_lock_down = 1` + Chrome 활성 | `/`                   | `Cmd + Shift + H`  |
-|                          | `is_caps_lock_down = 1` + Firefox 활성 | `/`                   | `Option + Home`    |
-
-### 디바이스 별 설정
-
-| **디바이스**                     | **설명**                                                                                                                                     |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| **Apple Keyboard (Vendor ID: 1452, Product ID: 594)** | 키보드와 마우스 동시 입력 허용                                                                                                               |
-| **Logitech Mouse (Vendor ID: 1133, Product ID: 45105)** | 마우스 수직 휠 방향 반전                                                                                                                     |
-| **Apple Keyboard (Vendor ID: 1452, Product ID: 591)** | `escape` 키를 `~`로 맵핑                                                                                                                   |
+### 특정 디바이스 설정
+| **디바이스**       | **설정**                                                                                  |
+|--------------------|-------------------------------------------------------------------------------------------|
+| 키보드 (Vendor: 1452, Product: 594) | 기본값                                                                                 |
+| 마우스 (Vendor: 1133, Product: 45105) | 마우스 세로 휠 반전                                                                    |
+| 키보드 (Vendor: 1452, Product: 591) | `escape` 키를 `~ (틸드)`로 리매핑                                                      |
