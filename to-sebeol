@@ -1,0 +1,12 @@
+#!/usr/bin/swift
+
+import Carbon
+
+for s in TISCreateInputSourceList(nil, false)?.takeRetainedValue() as! [TISInputSource] {
+  if let n = TISGetInputSourceProperty(s, kTISPropertyInputSourceID) {
+    if Unmanaged<CFString>.fromOpaque(n).takeUnretainedValue() as String == "org.youknowone.inputmethod.Gureum.han3final" {
+      TISSelectInputSource(s)
+      break
+    }
+  }
+}

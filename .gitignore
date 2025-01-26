@@ -2,4 +2,6 @@
 !/.gitignore
 
 !/karabiner.json
-!/im-select-toggle
+!/to-colemak
+!/to-sebeol
+!/toggle

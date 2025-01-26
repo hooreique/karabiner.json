@@ -1,9 +1,0 @@
-#!/bin/sh
-
-current_layout=$(/opt/homebrew/bin/im-select)
-
-if [ "$current_layout" = "com.apple.keylayout.ABC" ]; then
-  /opt/homebrew/bin/im-select com.apple.inputmethod.Korean.2SetKorean
-else
-  /opt/homebrew/bin/im-select com.apple.keylayout.ABC
-fi

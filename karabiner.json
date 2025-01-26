@@ -29,7 +29,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_shift" }],
-                                "to_if_alone": [{ "shell_command": "/opt/homebrew/bin/im-select com.apple.keylayout.Colemak" }],
+                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/to-colemak" }],
                                 "type": "basic"
                             },
                             {
@@ -46,7 +46,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_shift" }],
-                                "to_if_alone": [{ "shell_command": "/opt/homebrew/bin/im-select org.youknowone.inputmethod.Gureum.han3final" }],
+                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/to-sebeol" }],
                                 "type": "basic"
                             },
                             {
@@ -63,7 +63,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_command" }],
-                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/im-select-toggle" }],
+                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/toggle" }],
                                 "type": "basic"
                             },
                             {
