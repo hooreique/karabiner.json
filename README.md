@@ -25,12 +25,14 @@ Windows + 날개셋 구성이 그리운 지점이다.
 ## etc (UHK60v2 stuff)
 
 한 쪽 Spacebar 는 그냥 Spacebar, 다른 쪽 Spacebar 는 Numpad_0 로 구성해둔다는 가정을 함.
+
 마찬가지로 Fn 키는 F20 으로 구성해둔다는 가정을 함.
 
 ### Numpad_0
 
-Tap: Spacebar
-Hold: 2nd Layer
+| Tap | Hold |
+| --- | --- |
+| Spacebar | 2nd Layer |
 
 ### F20
 
