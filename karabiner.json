@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "My settings",
+                        "description": "hoomod",
                         "manipulators": [
                             {
                                 "from": {
@@ -228,7 +228,7 @@
                         ]
                     },
                     {
-                        "description": "Capslock Combination",
+                        "description": "hoomod layer",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -480,7 +480,7 @@
                         ]
                     },
                     {
-                        "description": "CapsLock + Number Row => F1-F12",
+                        "description": "hoomod f layer",
                         "manipulators": [
                             {
                                 "conditions": [
