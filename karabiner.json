@@ -4,7 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "hoomod",
+                        "description": "hoomod_foundation",
                         "manipulators": [
                             {
                                 "from": {
@@ -24,7 +24,7 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "input_sources": [{ "language": "en" }],
                                         "type": "input_source_unless"
                                     }
                                 ],
@@ -45,8 +45,8 @@
                                         "type": "frontmost_application_unless"
                                     },
                                     {
-                                        "input_sources": [{ "input_mode_id": "org.youknowone.inputmethod.Gureum.han3final" }],
-                                        "type": "input_source_unless"
+                                        "input_sources": [{ "language": "en" }],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -77,7 +77,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "input_sources": [{ "language": "en" }],
                                         "type": "input_source_if"
                                     }
                                 ],
@@ -88,7 +88,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 1
                                         }
                                     }
@@ -96,7 +96,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 0
                                         }
                                     }
@@ -107,7 +107,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "input_sources": [{ "language": "en" }],
                                         "type": "input_source_unless"
                                     }
                                 ],
@@ -118,7 +118,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 1
                                         }
                                     }
@@ -126,7 +126,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 0
                                         }
                                     }
@@ -145,7 +145,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 1
                                         }
                                     }
@@ -153,7 +153,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "hoo_mod",
+                                            "name": "hoomod_key_held",
                                             "value": 0
                                         }
                                     }
@@ -228,12 +228,12 @@
                         ]
                     },
                     {
-                        "description": "hoomod layer",
+                        "description": "hoomod_motion",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -248,7 +248,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -263,7 +263,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -278,7 +278,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -293,7 +293,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -308,7 +308,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -323,7 +323,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -338,7 +338,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -353,7 +353,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -368,7 +368,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -383,7 +383,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -398,7 +398,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -413,7 +413,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -428,7 +428,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -454,7 +454,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -480,12 +480,12 @@
                         ]
                     },
                     {
-                        "description": "hoomod f layer",
+                        "description": "hoomod_special",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -500,7 +500,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -515,7 +515,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -530,7 +530,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -545,7 +545,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -560,7 +560,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -575,7 +575,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -590,7 +590,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -605,7 +605,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -620,7 +620,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -635,7 +635,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -650,7 +650,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "hoo_mod",
+                                        "name": "hoomod_key_held",
                                         "type": "variable_if",
                                         "value": 1
                                     }

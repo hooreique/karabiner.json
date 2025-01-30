@@ -1,47 +1,37 @@
-### 주요 설정: 키 리매핑 및 조건
-| **설명**                     | **입력 키**               | **출력 키/명령**                                       | **조건**                                                                                       |
-|-------------------------------|---------------------------|-------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| `right_control` 리매핑        | `right_control`           | `right_control`                                       | 단독 입력 시 `delete_forward`                                                                 |
-| `left_shift` 리매핑           | `left_shift`              | `left_shift`                                          | 단독 입력 시 `im-select`로 Colemak 키보드 레이아웃 전환 (RDC 앱 제외)                          |
-| `right_shift` 리매핑          | `right_shift`             | `right_shift`                                         | 단독 입력 시 `im-select`로 한글 3벌식 전환 (RDC 앱 제외)                                       |
-| `right_command` 리매핑        | `right_command`           | `right_command`                                       | 단독 입력 시 사용자 정의 `im-select-toggle` 실행 (RDC 앱 제외)                                 |
-| `caps_lock` 리매핑            | `caps_lock`               | `escape` (단독 입력 시) / CapsLock 키 눌림 상태 변수 설정 |                                                                                               |
-| `left_command` ↔ `left_option`| `left_command`            | `left_option`                                         | RDC 앱 활성화 시                                                                               |
-| `right_command` ↔ `right_option`| `right_command`           | `right_option`                                        | RDC 앱 활성화 시                                                                               |
+개인 Karabiner-Elements 구성입니다.
+지극히 개인적인 구성이기 때문에 자세히 설명하지 않습니다.
+미래의 나를 위해 작성했습니다.
 
-### CapsLock + 조합 키 리매핑
-| **조합 키**        | **출력 키/명령**      |
-|---------------------|-----------------------|
-| `CapsLock + J`      | `←` (Left Arrow)     |
-| `CapsLock + K`      | `↓` (Down Arrow)     |
-| `CapsLock + I`      | `↑` (Up Arrow)       |
-| `CapsLock + L`      | `→` (Right Arrow)    |
-| `CapsLock + H`      | `Home`               |
-| `CapsLock + ;`      | `End`                |
-| `CapsLock + E`      | 화면 위로 스크롤 (마우스 휠 -64) |
-| `CapsLock + D`      | 화면 아래로 스크롤 (마우스 휠 64) |
-| `CapsLock + S`      | 오른쪽으로 스크롤 (마우스 휠 64) |
-| `CapsLock + F`      | 왼쪽으로 스크롤 (마우스 휠 -64) |
+## Prerequisites
 
-### CapsLock + 숫자 키 -> Function Key
-| **CapsLock + 숫자 키** | **출력 키** |
-|-------------------------|-------------|
-| `CapsLock + 1`         | `F1`        |
-| `CapsLock + 2`         | `F2`        |
-| `CapsLock + 3`         | `F3`        |
-| `CapsLock + 4`         | `F4`        |
-| `CapsLock + 5`         | `F5`        |
-| `CapsLock + 6`         | `F6`        |
-| `CapsLock + 7`         | `F7`        |
-| `CapsLock + 8`         | `F8`        |
-| `CapsLock + 9`         | `F9`        |
-| `CapsLock + 0`         | `F10`       |
-| `CapsLock + -`         | `F11`       |
-| `CapsLock + =`         | `F12`       |
+- 설정 > 키보드 > 🌐 키를 누를 때 실행할 동작: 이모티콘 및 기호 보기
+- 설정 > 키보드 > 키보드 단축키... > 입력 소스 > 이전 입력 소스 선택: F19
+- 설정 > 키보드 > 키보드 단축키... > 입력 소스 > 입력 메뉴에서 다음 소스 선택: F18
+- 입력 소스
+  - ABC, Colemak 등 `"language": "en"` 인 입력 소스가 적어도 하나 있을 것
+  - 두벌식, 세벌식 등 `"language": "en"` 이 아닌 입력 소스가 적어도 하나 있을 것
 
-### 특정 디바이스 설정
-| **디바이스**       | **설정**                                                                                  |
-|--------------------|-------------------------------------------------------------------------------------------|
-| 키보드 (Vendor: 1452, Product: 594) | 기본값                                                                                 |
-| 마우스 (Vendor: 1133, Product: 45105) | 마우스 세로 휠 반전                                                                    |
-| 키보드 (Vendor: 1452, Product: 591) | `escape` 키를 `~ (틸드)`로 리매핑                                                      |
+## Input Source Stuff
+
+Left Shift 는 항상 en 으로,
+Right Shift 는 항상 non-en 으로 가도록 함
+
+이때 주의할 점은 직전에 사용한 레이아웃을 반대 쪽으로 항상 유지해야 한다는 것.
+그렇게 하고 싶지 않았으나 스크립트를 실행하는 방식으로는 반응이 느린 문제가 있어서 Ad-hoc 한 것임.
+다시 말해, 평소에 en 과 non-en 단 두 개의 입력 소스만 사용한다는 가정을 함.
+
+Windows + 날개셋 구성이 그리운 지점이다.
+
+## etc (UHK60v2 stuff)
+
+한 쪽 Spacebar 는 그냥 Spacebar, 다른 쪽 Spacebar 는 Numpad_0 로 구성해둔다는 가정을 함.
+마찬가지로 Fn 키는 F20 으로 구성해둔다는 가정을 함.
+
+### Numpad_0
+
+Tap: Spacebar
+Hold: 2nd Layer
+
+### F20
+
+애플 내장 fn 키로 단순 매핑
