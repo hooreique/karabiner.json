@@ -22,6 +22,10 @@
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "type": "input_source_unless"
                                     }
                                 ],
                                 "from": {
@@ -29,7 +33,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_shift" }],
-                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/to-colemak" }],
+                                "to_if_alone": [{ "key_code": "f19" }],
                                 "type": "basic"
                             },
                             {
@@ -39,6 +43,10 @@
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "input_sources": [{ "input_mode_id": "org.youknowone.inputmethod.Gureum.han3final" }],
+                                        "type": "input_source_unless"
                                     }
                                 ],
                                 "from": {
@@ -46,7 +54,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_shift" }],
-                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/to-sebeol" }],
+                                "to_if_alone": [{ "key_code": "f19" }],
                                 "type": "basic"
                             },
                             {
@@ -63,10 +71,16 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_command" }],
-                                "to_if_alone": [{ "shell_command": "/Users/song/.config/karabiner/toggle" }],
+                                "to_if_alone": [{ "key_code": "f18" }],
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "type": "input_source_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
@@ -74,7 +88,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "is_caps_lock_down",
+                                            "name": "hoo_mod",
                                             "value": 1
                                         }
                                     }
@@ -82,12 +96,69 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "is_caps_lock_down",
+                                            "name": "hoo_mod",
                                             "value": 0
                                         }
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "input_sources": [{ "input_source_id": "com.apple.keylayout.Colemak" }],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hoo_mod",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hoo_mod",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    { "key_code": "escape" },
+                                    { "key_code": "f19" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "keypad_0",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hoo_mod",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "hoo_mod",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "spacebar" }],
                                 "type": "basic"
                             },
                             {
@@ -162,7 +233,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -177,7 +248,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -192,7 +263,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -207,7 +278,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -222,7 +293,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -237,7 +308,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -252,7 +323,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -267,7 +338,37 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "u",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "page_up" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hoo_mod",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "page_down" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -282,7 +383,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -297,7 +398,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -312,7 +413,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -327,7 +428,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -353,7 +454,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     },
@@ -384,7 +485,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -399,7 +500,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -414,7 +515,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -429,7 +530,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -444,7 +545,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -459,7 +560,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -474,7 +575,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -489,7 +590,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -504,7 +605,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -519,7 +620,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -534,7 +635,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -549,7 +650,7 @@
                             {
                                 "conditions": [
                                     {
-                                        "name": "is_caps_lock_down",
+                                        "name": "hoo_mod",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -600,6 +701,12 @@
             ],
             "name": "Default profile",
             "selected": true,
+            "simple_modifications": [
+                {
+                    "from": { "key_code": "f20" },
+                    "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "keyboard_type_v2": "ansi"
