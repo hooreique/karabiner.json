@@ -263,6 +263,10 @@
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "input_sources": [{ "language": "en" }],
+                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -273,7 +277,33 @@
                                 "to_if_alone": [
                                     {
                                         "hold_down_milliseconds": 105,
-                                        "key_code": "f18"
+                                        "shell_command": "/opt/macism/bin/macism org.youknowone.inputmethod.Gureum.han2"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.microsoft\\.rdc\\.macos$"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    },
+                                    {
+                                        "input_sources": [{ "language": "en" }],
+                                        "type": "input_source_unless"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "right_command" }],
+                                "to_if_alone": [
+                                    {
+                                        "hold_down_milliseconds": 105,
+                                        "shell_command": "/opt/macism/bin/macism com.apple.keylayout.ABC"
                                     }
                                 ],
                                 "type": "basic"
