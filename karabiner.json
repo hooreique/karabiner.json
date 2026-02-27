@@ -222,7 +222,12 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_shift" }],
-                                "to_if_alone": [{ "key_code": "f19" }],
+                                "to_if_alone": [
+                                    {
+                                        "hold_down_milliseconds": 105,
+                                        "key_code": "f19"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -243,7 +248,12 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_shift" }],
-                                "to_if_alone": [{ "key_code": "f19" }],
+                                "to_if_alone": [
+                                    {
+                                        "hold_down_milliseconds": 105,
+                                        "key_code": "f19"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -260,7 +270,12 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "right_command" }],
-                                "to_if_alone": [{ "key_code": "f18" }],
+                                "to_if_alone": [
+                                    {
+                                        "hold_down_milliseconds": 105,
+                                        "key_code": "f18"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -281,8 +296,19 @@
                                     "key_code": "right_control",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "right_control" }],
-                                "to_if_alone": [{ "key_code": "delete_forward" }],
+                                "to": [
+                                    {
+                                        "key_code": "right_control",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "hold_down_milliseconds": 105,
+                                        "key_code": "delete_forward"
+                                    }
+                                ],
+                                "to_if_held_down": [{ "key_code": "delete_forward" }],
                                 "type": "basic"
                             }
                         ]
