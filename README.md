@@ -5,31 +5,18 @@
 ## Prerequisites
 
 - Karabiner-Elements
-- macism: `/opt/macism/bin/macism`
-- 설정 > 키보드 > 키보드 단축키... > 입력 소스 > 이전 입력 소스 선택: F19
+- macism: `~/.nix-profile/bin/macism`
 - 입력 소스
   - ABC: `com.apple.keylayout.ABC`
   - 구름 두벌식: `org.youknowone.inputmethod.Gureum.han2`
-  - ABC, Colemak, hisle 등 `"language": "en"` 인 입력 소스가 적어도 하나 있을 것
-  - 두벌식, 세벌식 등 `"language": "en"` 이 아닌 입력 소스가 적어도 하나 있을 것
 
 ## Input Source Stuff
 
-Right Command 단독 탭으로 입력 소스를 직접 선택한다.
+Right Command 단독 탭으로 입력 소스를 직접 선택한다. Microsoft Remote
+Desktop 에서는 비활성화된다.
 
 - 현재 입력 소스가 `"language": "en"` 이면 구름 두벌식으로 전환한다.
 - 현재 입력 소스가 `"language": "en"` 이 아니면 ABC로 전환한다.
-
-Left Shift / Right Shift 단독 탭은 Karabiner에서 입력 소스 전환으로 쓰지
-않는다. hisle가 물리적인 왼쪽/오른쪽 Shift를 직접 받아서 로마자/한글
-모드를 선택하기 때문이다.
-
-Karabiner의 `"language": "en"` 조건은 hisle 내부의 로마자/한글 모드를
-구분하지 못한다. hisle 전용 조건이 필요하면 language 조건이 아니라 input
-source id 조건을 써야 한다.
-
-Caps Lock 단독 탭은 en 입력 소스에서는 Escape만 내보내고, non-en 입력
-소스에서는 Escape 뒤에 F19를 내보낸다.
 
 ## MS RDC Stuff
 

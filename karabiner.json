@@ -99,10 +99,6 @@
                                             "^com\\.microsoft\\.rdc\\.macos$"
                                         ],
                                         "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "input_sources": [{ "language": "en" }],
-                                        "type": "input_source_if"
                                     }
                                 ],
                                 "from": {
@@ -126,45 +122,6 @@
                                     }
                                 ],
                                 "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_unless"
-                                    },
-                                    {
-                                        "input_sources": [{ "language": "en" }],
-                                        "type": "input_source_unless"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "vmod_key_held",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "vmod_key_held",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    { "key_code": "escape" },
-                                    { "key_code": "f19" }
-                                ],
                                 "type": "basic"
                             },
                             {
@@ -225,7 +182,7 @@
                                 "to_if_alone": [
                                     {
                                         "hold_down_milliseconds": 105,
-                                        "shell_command": "/opt/macism/bin/macism org.youknowone.inputmethod.Gureum.han2"
+                                        "shell_command": "~/.nix-profile/bin/macism org.youknowone.inputmethod.Gureum.han2"
                                     }
                                 ],
                                 "type": "basic"
@@ -251,7 +208,7 @@
                                 "to_if_alone": [
                                     {
                                         "hold_down_milliseconds": 105,
-                                        "shell_command": "/opt/macism/bin/macism com.apple.keylayout.ABC"
+                                        "shell_command": "~/.nix-profile/bin/macism com.apple.keylayout.ABC"
                                     }
                                 ],
                                 "type": "basic"
